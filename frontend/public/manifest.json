@@ -1,0 +1,8 @@
+{
+  "short_name": "VirtuAI Office",
+  "name": "VirtuAI Office - Complete AI Development Team",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
