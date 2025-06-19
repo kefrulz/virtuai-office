@@ -81,15 +81,15 @@ Repository = "https://github.com/kefrulz/virtuai-office"
 Changelog = "https://github.com/kefrulz/virtuai-office/blob/main/CHANGELOG.md"
 
 [project.scripts]
-virtuai-office = "virtuai_office.cli:main"
-virtuai = "virtuai_office.cli:main"
+virtuai-office = "backend.cli:main"
+virtuai = "backend.cli:main"
 
 [tool.setuptools]
-packages = ["virtuai_office"]
-package-dir = {"" = "backend"}
+packages = ["backend"]
+package-dir = {"" = "."}
 
 [tool.setuptools.package-data]
-virtuai_office = ["templates/*.html", "static/*"]
+backend = ["templates/*.html", "static/*"]
 
 [tool.black]
 line-length = 100
@@ -113,7 +113,7 @@ extend-exclude = '''
 profile = "black"
 multi_line_output = 3
 line_length = 100
-known_first_party = ["virtuai_office"]
+known_first_party = ["backend"]
 known_third_party = ["fastapi", "pydantic", "sqlalchemy", "ollama"]
 
 [tool.mypy]
@@ -151,7 +151,7 @@ markers = [
 asyncio_mode = "auto"
 
 [tool.coverage.run]
-source = ["virtuai_office"]
+source = ["backend"]
 omit = [
     "*/tests/*",
     "*/test_*",
@@ -171,9 +171,9 @@ exclude_lines = [
     "raise AssertionError",
     "raise NotImplementedError",
     "if 0:",
-    "if __name__ == .__main__.:",
-    "class .*\bProtocol\):",
-    "@(abc\.)?abstractmethod",
+    "if __name__ == '__main__':",
+    "class .*\\bProtocol\\):",
+    "@(abc\\.)?abstractmethod",
 ]
 
 [tool.ruff]
@@ -200,4 +200,4 @@ ignore = [
 
 [tool.bandit]
 exclude_dirs = ["tests", "build", "dist"]
-skips = ["B101", "B601"]ba
+skips = ["B101", "B601"]
