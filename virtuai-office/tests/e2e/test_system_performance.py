@@ -1,1 +1,0 @@
-# System performance E2E tests - TBD
