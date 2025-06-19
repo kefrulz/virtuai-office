@@ -1,1 +1,0 @@
-# Apple Silicon optimization tests - TBD
