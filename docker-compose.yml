@@ -1,8 +1,3 @@
-# Create a backup of current file
-mv docker-compose.yml docker-compose.yml.backup
-
-# Create new simplified docker-compose.yml
-cat > docker-compose.yml << 'EOF'
 services:
   # VirtuAI Office Backend API
   backend:
@@ -72,4 +67,3 @@ volumes:
 networks:
   virtuai-network:
     driver: bridge
-EOF
